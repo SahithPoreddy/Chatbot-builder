@@ -71,7 +71,13 @@ export function FlowBuilderModule() {
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
       // IMPORTANT: Replace with your actual parent origin
-      const allowedOrigins = ['http://localhost:5173', 'http://localhost:3000', 'https://yourdomain.com'];
+      const allowedOrigins = [
+        'http://localhost:5173',
+        'http://localhost:5174',  // Added for Vite dev server
+        'http://localhost:3000',
+        'http://localhost:8080',  // Open WebUI default
+        'https://yourdomain.com'
+      ];
 
       if (!allowedOrigins.includes(event.origin)) {
         console.warn('🚫 Message from unauthorized origin:', event.origin);

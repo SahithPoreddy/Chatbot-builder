@@ -73,6 +73,9 @@ async function captureDiagramAsSVG(paneElement: HTMLElement): Promise<string> {
   }
 }
 
+// Export the function for external use
+export { captureDiagramAsSVG };
+
 function createEnhancedSVG(paneElement: HTMLElement, bounds: any): string {
   const nodes = paneElement.querySelectorAll('.react-flow__node');
   const edges = paneElement.querySelectorAll('.react-flow__edge');

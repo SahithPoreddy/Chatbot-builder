@@ -63,10 +63,17 @@ export interface ChatbotFlowData {
   metadata?: Record<string, any>;
 }
 
+// Enhanced save payload that includes both JSON and SVG data
+export interface SaveDrawingPayload {
+  flowData: ChatbotFlowData;
+  svgContent: string | null;
+  filename: string;
+}
+
 // Open WebUI communication interfaces
 export interface OpenWebUIMessage {
   type: 'ready' | 'loadData' | 'saveDrawing' | 'dataLoaded';
-  payload?: ChatbotFlowData | null;
+  payload?: ChatbotFlowData | SaveDrawingPayload | null;
   success?: boolean;
   error?: string;
   message?: string;
@@ -75,7 +82,7 @@ export interface OpenWebUIMessage {
 // Message types for parent-child communication
 export interface SaveDrawingMessage {
   type: 'saveDrawing';
-  payload: ChatbotFlowData;
+  payload: SaveDrawingPayload;
 }
 
 export interface LoadDataMessage {

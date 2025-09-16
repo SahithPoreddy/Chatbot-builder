@@ -213,6 +213,6 @@ Contributions are welcome! Please open issues or submit pull requests for improv
 # Author
 
 **Denish Sharma**
-- Email: denishcommon@gmail.com
-- LinkedIn: [denish-sharma](https://www.linkedin.com/in/denishsharma/)
-- GitHub: [denish-sharma](https://github.com/denishsharma)
+- Email: sahith12poreddy@gmail.com
+- LinkedIn: [Sahith-Chandra](https://www.linkedin.com/in/sahith-chandra-poreddy-1b37b3242/)
+- GitHub: [Sahith-Chandra](https://github.com/SahithPoreddy/)
