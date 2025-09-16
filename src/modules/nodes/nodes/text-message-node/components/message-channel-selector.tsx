@@ -1,17 +1,13 @@
 import type { MessageChannelDetail, MessageChannelType } from '~/modules/nodes/nodes/text-message-node/constants/channels'
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
-
-import { listify } from 'radash'
-
 import { cn } from '~@/utils/cn'
-import { MessageChannelDetails } from '~/modules/nodes/nodes/text-message-node/constants/channels'
 
 type MessageChannelSelectorProps = Readonly<{
   detail: MessageChannelDetail;
   onSelect: (channel: MessageChannelDetail & { type: MessageChannelType }) => void;
 }>
 
-export function MessageChannelSelector({ detail, onSelect }: MessageChannelSelectorProps) {
+export function MessageChannelSelector({ detail}: MessageChannelSelectorProps) {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>

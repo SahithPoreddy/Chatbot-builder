@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { ReactFlowProvider, useReactFlow } from '@xyflow/react'
+import { ReactFlowProvider} from '@xyflow/react'
 
 import { FlowBuilderModule } from '~/modules/flow-builder/flow-builder-module'
 import { SidebarModule } from '~/modules/sidebar/sidebar-module'
@@ -7,16 +7,16 @@ import { ToasterModule } from '~/modules/toaster/toaster-module'
 import { AddNodeOnEdgeDropStateProvider } from '~/stores/add-node-on-edge-drop-state'
 
 // Import TypeScript interfaces for Open WebUI integration
-import type {
-  ChatbotFlowData,
-  FlowNode,
-  FlowEdge,
-  SaveDrawingPayload,
-  SaveDrawingMessage,
-} from '~/types/open-webui.types'
+// import type {
+//   ChatbotFlowData,
+//   FlowNode,
+//   FlowEdge,
+//   SaveDrawingPayload,
+//   SaveDrawingMessage,
+// } from '~/types/open-webui.types'
 
-// Import SVG export utility
-import { captureDiagramAsSVG } from '~/utils/svg-export'
+// // Import SVG export utility
+// import { captureDiagramAsSVG } from '~/utils/svg-export'
 
 export const Route = createFileRoute('/')({
   component: HomePage,

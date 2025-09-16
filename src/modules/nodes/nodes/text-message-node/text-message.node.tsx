@@ -1,8 +1,8 @@
 import type { Node, NodeProps } from '@xyflow/react'
-import type { MessageChannelDetail, MessageChannelType } from '~/modules/nodes/nodes/text-message-node/constants/channels'
+import type { MessageChannelType } from '~/modules/nodes/nodes/text-message-node/constants/channels'
 import type { BaseNodeData, RegisterNodeMetadata } from '~/modules/nodes/types'
-import { Position, useReactFlow } from '@xyflow/react'
-import { produce } from 'immer'
+import { Position} from '@xyflow/react'
+// import { produce } from 'immer'
 import { nanoid } from 'nanoid'
 
 import { isEmpty } from 'radash'
@@ -10,8 +10,7 @@ import { memo, useCallback, useMemo, useState } from 'react'
 import { cn } from '~@/utils/cn'
 import CustomHandle from '~/modules/flow-builder/components/handles/custom-handle'
 import { useDeleteNode } from '~/modules/flow-builder/hooks/use-delete-node'
-import { MessageChannelSelector } from '~/modules/nodes/nodes/text-message-node/components/message-channel-selector'
-import { getMessageChannelDetails } from '~/modules/nodes/nodes/text-message-node/constants/channels'
+// import { getMessageChannelDetails } from '~/modules/nodes/nodes/text-message-node/constants/channels'
 import { BuilderNode } from '~/modules/nodes/types'
 import { getNodeDetail } from '~/modules/nodes/utils'
 import TextMessageNodePropertyPanel from '~/modules/sidebar/panels/node-properties/property-panels/text-message-property-panel'
@@ -33,23 +32,23 @@ export function TextMessageNode({ id, isConnectable, selected, data }: TextMessa
   const [showNodePropertiesOf] = useApplicationState(s => [s.actions.sidebar.showNodePropertiesOf])
   const [sourceHandleId] = useState<string>(nanoid())
 
-  const { setNodes } = useReactFlow()
+//   const { setNodes } = useReactFlow()
   const deleteNode = useDeleteNode()
 
-  const messageChannelDetail = useMemo(() => {
-    return getMessageChannelDetails(data.channel)
-  }, [data.channel])
+//   const messageChannelDetail = useMemo(() => {
+//     return getMessageChannelDetails(data.channel)
+//   }, [data.channel])
 
-  const onMessageChannelSelect = useCallback(
-    (channel: MessageChannelDetail & { type: MessageChannelType }) => {
-      setNodes(nodes => produce(nodes, (draft) => {
-        const node = draft.find(node => node.id === id)
+//   const onMessageChannelSelect = useCallback(
+//     (channel: MessageChannelDetail & { type: MessageChannelType }) => {
+//       setNodes(nodes => produce(nodes, (draft) => {
+//         const node = draft.find(node => node.id === id)
 
-        if (node) { node.data.channel = channel.type }
-      }))
-    },
-    [id, setNodes],
-  )
+//         if (node) { node.data.channel = channel.type }
+//       }))
+//     },
+//     [id, setNodes],
+//   )
 
   const showNodeProperties = useCallback(() => {
     showNodePropertiesOf({ id, type: NODE_TYPE })

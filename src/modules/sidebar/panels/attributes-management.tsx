@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useConditionStore } from '~/stores/condition-store';
 import { useCaseStore } from '~/stores/case-store';
-import { cn } from '~@/utils/cn';
 import SidebarPanelHeading from '~/modules/sidebar/components/sidebar-panel-heading';
 
 export function AttributesManagementPanel() {
